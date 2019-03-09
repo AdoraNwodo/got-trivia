@@ -24,4 +24,4 @@ before_script:
 
 # Run assemble and unit tests
 script:
-  - ./gradlew build check
+  - ./gradlew build
