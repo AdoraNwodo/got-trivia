@@ -43,5 +43,6 @@ class SplashActivity : AppCompatActivity() {
     private fun goToHome() {
         val intent = Intent(applicationContext, MainActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
     }
 }

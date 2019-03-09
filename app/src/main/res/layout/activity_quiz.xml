@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@drawable/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".QuizActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/linear_layout_top_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/btn_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close_white_24dp"
+                android:background="@android:color/transparent"
+            />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_default_score"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dimen_quiz_text_size"
+                android:gravity="right"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/quicksand"
+            />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_view_time_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/text_default_time_left"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dimen_quiz_text_size_sm"
+            android:fontFamily="@font/quicksand"
+            android:layout_below="@+id/linear_layout_top_view"
+            android:layout_margin="15dp"
+            android:background="@drawable/bg_time"
+        />
+
+        <LinearLayout
+            android:id="@+id/linear_layout_question_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card"
+            android:layout_below="@+id/text_view_time_left"
+            android:layout_marginTop="25dp" >
+
+            <TextView
+                android:id="@+id/text_view_questions_answered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/quicksand"
+                android:text="@string/text_default_questions_answered"
+            />
+
+            <TextView
+                android:id="@+id/text_view_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/text_default_questions"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/dimen_question_margin"
+                android:layout_marginBottom="@dimen/dimen_question_margin"
+                android:textSize="@dimen/dimen_question_text_size"
+            />
+
+            <Button
+                android:id="@+id/button_option_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_default_button"
+                android:background="@drawable/btn_default"
+                android:layout_marginBottom="@dimen/dimen_button_option_margin"
+                android:fontFamily="@font/quicksand_bold"
+            />
+
+            <Button
+                android:id="@+id/button_option_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_correct_button"
+                android:background="@drawable/btn_correct"
+                android:layout_marginBottom="@dimen/dimen_button_option_margin"
+                android:fontFamily="@font/quicksand_bold"
+            />
+
+            <Button
+                android:id="@+id/button_option_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_wrong_button"
+                android:background="@drawable/btn_wrong"
+                android:layout_marginBottom="@dimen/dimen_button_option_margin"
+                android:fontFamily="@font/quicksand_bold"
+            />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>

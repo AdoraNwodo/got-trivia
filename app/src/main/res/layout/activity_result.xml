@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizActivity"
+    android:padding="20dp"
+    >
+    <LinearLayout
+        android:id="@+id/linear_layout_game_over_view"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/card"
+        android:orientation="vertical"
+        android:layout_centerInParent="true" >
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_game_over"
+                android:fontFamily="@font/quicksand"
+                android:gravity="center"
+        />
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_default_total_score"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/colorDarkBlue"
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_alignTop="@+id/linear_layout_game_over_view"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="-100dp"
+            android:gravity="center"
+    >
+
+        <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:background="@drawable/btn_home"
+           android:padding="15dp"
+           android:layout_marginRight="15dp"
+           android:gravity="center"
+        >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_share_white_24dp"
+            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="Share"
+                android:fontFamily="@font/quicksand"
+            />
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/btn_home"
+                android:padding="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+        >
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_home_white_24dp"
+            />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="Home"
+                    android:fontFamily="@font/quicksand"
+            />
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/btn_home"
+                android:padding="15dp"
+                android:gravity="center"
+        >
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_format_list_bulleted_white_24dp"
+            />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="Scores"
+                    android:fontFamily="@font/quicksand"
+            />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_start_new_game"
+        android:textSize="20sp"
+        android:textFontWeight="900"
+        android:fontFamily="@font/quicksand"
+        android:textColor="@android:color/white"
+        android:background="@drawable/btn_home"
+        android:layout_alignParentBottom="true"
+    />
+
+</RelativeLayout>
