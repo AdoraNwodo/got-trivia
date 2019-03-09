@@ -1,0 +1,14 @@
+language: android
+android:
+  components:
+    - android-28
+    - build-tools-27.0.3
+
+env:
+  global:
+   # install timeout in 10 minutes (2 minutes by default)
+    - ADB_INSTALL_TIMEOUT=10
+
+# Run assemble and unit tests
+script:
+  - ./gradlew clean assembleDebug assembleRelease testDebug
