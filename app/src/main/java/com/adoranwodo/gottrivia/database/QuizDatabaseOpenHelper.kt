@@ -2,8 +2,6 @@ package com.adoranwodo.gottrivia.database
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import com.adoranwodo.gottrivia.database
-import com.adoranwodo.gottrivia.model.Question
 import org.jetbrains.anko.db.*
 
 class QuizDatabaseOpenHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_NAME, null, 1)  {

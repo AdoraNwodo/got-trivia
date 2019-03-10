@@ -1,8 +1,7 @@
 package com.adoranwodo.gottrivia.database
 
 import android.content.Context
-import com.adoranwodo.gottrivia.database
-import com.adoranwodo.gottrivia.model.Question
+import com.adoranwodo.gottrivia.utils.database
 import com.adoranwodo.gottrivia.model.Score
 import org.jetbrains.anko.db.MapRowParser
 import org.jetbrains.anko.db.insert

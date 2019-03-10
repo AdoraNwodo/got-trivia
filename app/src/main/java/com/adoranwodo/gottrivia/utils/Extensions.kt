@@ -1,4 +1,4 @@
-package com.adoranwodo.gottrivia
+package com.adoranwodo.gottrivia.utils
 
 import android.content.Context
 import com.adoranwodo.gottrivia.database.QuizDatabaseOpenHelper
