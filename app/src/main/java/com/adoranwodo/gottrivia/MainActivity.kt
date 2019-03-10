@@ -16,5 +16,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
         }
+
+        linear_layout_score.setOnClickListener {
+            val intent = Intent(applicationContext, ScoresActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
+        }
+
+        linear_layout_rules.setOnClickListener {
+            val intent = Intent(applicationContext, RulesActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
+        }
     }
 }

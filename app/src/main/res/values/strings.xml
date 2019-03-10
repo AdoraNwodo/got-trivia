@@ -10,4 +10,8 @@
     <string name="text_game_over">Game Over!</string>
     <string name="text_default_total_score">Your Score: 50</string>
     <string name="text_start_new_game">Start New Game</string>
+    <string name="text_got_description">Game of Thrones Trivia is a trivia game based on the Game of Thrones series.
+        Just for fun, while we wait for the final season. Players have a short amount of time to answer questions
+        correctly. As you build points, you would be able to unlock other quiz levels. Have fun!
+    </string>
 </resources>

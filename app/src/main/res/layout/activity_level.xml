@@ -8,6 +8,15 @@
         android:padding="20dp"
         tools:context=".MainActivity">
 
+    <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_white_24dp"
+            android:background="@android:color/transparent"
+            android:layout_marginBottom="20dp"
+    />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

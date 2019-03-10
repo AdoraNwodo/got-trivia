@@ -30,12 +30,71 @@
             android:gravity="center"
     />
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="40dp"
-            android:layout_alignParentBottom="true"
-    >
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+        >
+        <LinearLayout
+                android:layout_alignTop="@+id/linear_layout_game_over_view"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="25dp"
+        >
+
+            <LinearLayout
+                    android:id="@+id/linear_layout_rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/btn_home"
+                    android:padding="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center"
+            >
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_games_white_24dp"
+                />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:text="Rules"
+                        android:fontFamily="@font/quicksand"
+                />
+
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/linear_layout_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/btn_home"
+                    android:padding="15dp"
+                    android:gravity="center"
+            >
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_format_list_bulleted_white_24dp"
+                />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:text="Scores"
+                        android:fontFamily="@font/quicksand"
+                />
+
+            </LinearLayout>
+
+        </LinearLayout>
         <Button
                 android:id="@+id/btn_play"
                 android:layout_width="match_parent"

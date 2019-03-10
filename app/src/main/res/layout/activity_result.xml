@@ -45,13 +45,14 @@
     >
 
         <LinearLayout
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:orientation="vertical"
-           android:background="@drawable/btn_home"
-           android:padding="15dp"
-           android:layout_marginRight="15dp"
-           android:gravity="center"
+            android:id="@+id/linear_layout_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/btn_home"
+            android:padding="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
         >
             <ImageView
                 android:layout_width="wrap_content"

@@ -16,5 +16,10 @@ class LevelActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
         }
+
+        btn_close.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
+        }
     }
 }

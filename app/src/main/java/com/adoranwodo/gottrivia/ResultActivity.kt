@@ -3,9 +3,12 @@ package com.adoranwodo.gottrivia
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ShareActionProvider
 import kotlinx.android.synthetic.main.activity_result.*
 
 class ResultActivity : AppCompatActivity() {
+
+    private var shareActionProvider: ShareActionProvider? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,5 +19,16 @@ class ResultActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
         }
+
+        linear_layout_share.setOnClickListener {
+            // launch share intent
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, I am sharing this")
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject")
+            startActivity(Intent.createChooser(shareIntent, "Share results via"))
+        }
+
     }
 }

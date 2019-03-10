@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".ScoresActivity">
         </activity>
+        <activity android:name=".RulesActivity">
+        </activity>
     </application>
 
 </manifest>

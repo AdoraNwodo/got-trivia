@@ -3,6 +3,7 @@ package com.adoranwodo.gottrivia.adapters
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.adoranwodo.gottrivia.R
 import com.adoranwodo.gottrivia.data.Score
@@ -15,18 +16,30 @@ class ScoresAdapter(private val myDataset: Array<Score>) :
         private var mDifficultyView: TextView? = null
         private var mTimeView: TextView? = null
         private var mScoreView: TextView? = null
+        private var mMoodView: ImageView? = null
 
 
         init {
             mDifficultyView = itemView.findViewById(R.id.text_view_difficulty)
             mTimeView = itemView.findViewById(R.id.text_view_time)
             mScoreView = itemView.findViewById(R.id.text_view_score)
+            mMoodView = itemView.findViewById(R.id.image_view_mood)
         }
 
         fun bind(score: Score) {
+            val points = score.points
+
             mDifficultyView?.text = score.difficulty
             mTimeView?.text = score.time
-            mScoreView?.text = score.points.toString()
+            mScoreView?.text = points.toString()
+
+            when(points){
+                in 70..100 -> mMoodView?.setImageResource(R.drawable.happy)
+                in 50..69 -> mMoodView?.setImageResource(R.drawable.smiling)
+                in 40..59 -> mMoodView?.setImageResource(R.drawable.confused)
+                else -> mMoodView?.setImageResource(R.drawable.crying)
+            }
+
         }
 
     }

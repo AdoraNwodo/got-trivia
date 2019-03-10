@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".RulesActivity" >
+
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close_white_24dp"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="20dp"
+    />
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Game rules"
+                android:textSize="23sp"
+                android:fontFamily="@font/got"
+                android:textColor="@color/colorLightBlue"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+        />
+
+        <LinearLayout
+                android:id="@+id/easy_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:background="@drawable/card" >
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorDarkBlue"
+                    android:text="The game"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:gravity="center"
+            />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text="@string/text_got_description"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+            />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
