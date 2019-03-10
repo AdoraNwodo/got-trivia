@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:padding="20dp"
+        tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose a level"
+                android:textSize="23sp"
+                android:fontFamily="@font/got"
+                android:textColor="@color/colorLightBlue"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+        />
+
+        <LinearLayout
+                android:id="@+id/easy_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:background="@drawable/btn_home" >
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="EASY"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:layout_weight="8"
+            />
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_lock_open_white_24dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="2"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:background="@drawable/btn_disabled"
+                android:weightSum="10" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="MEDIUM"
+                android:textSize="20sp"
+                android:fontFamily="@font/quicksand"
+                android:gravity="center"
+                android:layout_weight="8"
+            />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_lock_outline_white_24dp"
+                android:layout_gravity="right"
+                android:layout_weight="2"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:background="@drawable/btn_disabled"
+                android:weightSum="10" >
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="HARD"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:layout_weight="8"
+            />
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_lock_outline_white_24dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="2"
+            />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

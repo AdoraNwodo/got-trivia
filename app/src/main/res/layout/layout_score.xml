@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@drawable/score_card"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="20dp"
+>
+    <ImageView
+        android:id="@+id/image_view_mood"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/happy"
+    />
+    <TextView
+        android:id="@+id/text_view_difficulty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:fontFamily="@font/quicksand_bold"
+        android:textColor="@android:color/white"
+        android:text="Easy"
+        android:textSize="18sp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+    />
+
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_access_time_blue_24dp"
+    />
+    <TextView
+        android:id="@+id/text_view_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:fontFamily="@font/quicksand_bold"
+        android:textColor="@android:color/white"
+        android:text="200s"
+        android:textSize="18sp"
+    />
+
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_star_blue_24dp"
+    />
+    <TextView
+        android:id="@+id/text_view_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:fontFamily="@font/quicksand_bold"
+        android:textColor="@android:color/white"
+        android:text="300pts"
+        android:textSize="18sp"
+    />
+</LinearLayout>

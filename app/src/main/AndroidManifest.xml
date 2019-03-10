@@ -22,6 +22,10 @@
         </activity>
         <activity android:name=".ResultActivity">
         </activity>
+        <activity android:name=".LevelActivity">
+        </activity>
+        <activity android:name=".ScoresActivity">
+        </activity>
     </application>
 
 </manifest>

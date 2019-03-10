@@ -3,16 +3,16 @@ package com.adoranwodo.gottrivia
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_level.*
 
-class MainActivity : AppCompatActivity() {
+class LevelActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_level)
 
-        btn_play.setOnClickListener {
-            val intent = Intent(applicationContext, LevelActivity::class.java)
+        easy_level.setOnClickListener {
+            val intent = Intent(applicationContext, QuizActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
         }
