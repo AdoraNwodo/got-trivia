@@ -1,4 +1,4 @@
-package com.adoranwodo.gottrivia.adapters
+package com.adoranwodo.gottrivia.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.adoranwodo.gottrivia.R
-import com.adoranwodo.gottrivia.data.Score
+import com.adoranwodo.gottrivia.model.Score
 
 class ScoresAdapter(private val myDataset: Array<Score>) :
     RecyclerView.Adapter<ScoresAdapter.ScoresViewHolder>() {

@@ -4,8 +4,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import com.adoranwodo.gottrivia.adapters.ScoresAdapter
-import com.adoranwodo.gottrivia.data.Score
+import com.adoranwodo.gottrivia.adapter.ScoresAdapter
+import com.adoranwodo.gottrivia.model.Score
 import kotlinx.android.synthetic.main.activity_scores.*
 
 class ScoresActivity : AppCompatActivity() {
