@@ -7,11 +7,12 @@ import org.jetbrains.anko.db.MapRowParser
 import org.jetbrains.anko.db.*
 
 class QuestionRepository(val context: Context){
-    fun fetch(level: String): ArrayList<Question> = context.database.use {
+    fun fetch(level: String?): ArrayList<Question> = context.database.use {
         var questions = ArrayList<Question>()
 
         select(QUESTION_TABLE_NAME, "id", "question", "difficulty", "optionA", "optionB", "optionC", "answer")
-            .whereArgs("difficulty = $level")
+            .whereArgs("difficulty = '$level'")
+            .limit(10)
             .parseList(object: MapRowParser<List<Question>>{
                 override fun parseRow(columns: Map<String, Any?>): List<Question>{
                     val id = columns.getValue("id")
@@ -37,8 +38,11 @@ class QuestionRepository(val context: Context){
 
                     return questions
                 }
+
             })
-        questions
+        questions.shuffle()
+
+        ArrayList(questions.take(10))
     }
 
 

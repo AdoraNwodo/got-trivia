@@ -28,6 +28,7 @@
             />
 
             <TextView
+                android:id="@+id/text_view_default_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/text_default_score"
@@ -100,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/text_correct_button"
-                android:background="@drawable/btn_correct"
+                android:background="@drawable/btn_default"
                 android:layout_marginBottom="@dimen/dimen_button_option_margin"
                 android:fontFamily="@font/quicksand_bold"
             />
@@ -110,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/text_wrong_button"
-                android:background="@drawable/btn_wrong"
+                android:background="@drawable/btn_default"
                 android:layout_marginBottom="@dimen/dimen_button_option_margin"
                 android:fontFamily="@font/quicksand_bold"
             />

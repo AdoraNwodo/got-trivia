@@ -5,13 +5,15 @@ import android.content.SharedPreferences
 
 class SharedPreferenceHelper(val context: Context) {
 
-    // private val PREFS_NAME = "Adora_GOT_Trivia"
-
     private val sharedPref: SharedPreferences = context.getSharedPreferences(SharedPreferenceContract.PREF_NAME, Context.MODE_PRIVATE)
 
-    fun isNotFirstInstallation(): Boolean {
-        return sharedPref.contains(SharedPreferenceContract.PREF_INSTALLED)
-                && sharedPref.getBoolean(SharedPreferenceContract.PREF_INSTALLED, false)
+    /**
+     * Checks if user has installed the application before
+     * @return
+     */
+    fun isFirstInstallation(): Boolean {
+        return ! (sharedPref.contains(SharedPreferenceContract.PREF_INSTALLED)
+                && sharedPref.getBoolean(SharedPreferenceContract.PREF_INSTALLED, false))
     }
 
     /**
@@ -46,8 +48,8 @@ class SharedPreferenceHelper(val context: Context) {
 
         editor.putBoolean(SharedPreferenceContract.PREF_INSTALLED, true)
         editor.putBoolean(SharedPreferenceContract.PREF_EASY, true)
-        editor.putBoolean(SharedPreferenceContract.PREF_MEDIUM, true)
-        editor.putBoolean(SharedPreferenceContract.PREF_HARD, true)
+        editor.putBoolean(SharedPreferenceContract.PREF_MEDIUM, false)
+        editor.putBoolean(SharedPreferenceContract.PREF_HARD, false)
         editor.putInt(SharedPreferenceContract.PREF_HIGHEST_SCORE, 0)
 
         editor.apply()
@@ -89,29 +91,35 @@ class SharedPreferenceHelper(val context: Context) {
     }
 
 
+    /**
+     * Saves an item with a specific key-value pair to Shared Preference file
+     */
     fun save(KEY_NAME: String, status: Boolean) {
-
         val editor: SharedPreferences.Editor = sharedPref.edit()
-
         editor.putBoolean(KEY_NAME, status)
-
         editor.apply()
     }
 
+    /**
+     * Retrieves an item with a specific key from Shared Preference file
+     */
     fun retrieve(KEY_NAME: String): Boolean {
-
         return sharedPref.getBoolean(KEY_NAME, false)
     }
 
+    /**
+     * Removes all items from Shared Preference file
+     */
     fun clearAll() {
-
         val editor: SharedPreferences.Editor = sharedPref.edit()
         editor.clear()
         editor.apply()
     }
 
+    /**
+     * Removes an item with a specific key from Shared Preference file
+     */
     fun remove(KEY_NAME: String) {
-
         val editor: SharedPreferences.Editor = sharedPref.edit()
         editor.remove(KEY_NAME)
         editor.apply()

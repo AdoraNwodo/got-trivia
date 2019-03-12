@@ -3,6 +3,10 @@ package com.adoranwodo.gottrivia
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.ImageView
+import android.widget.LinearLayout
+import com.adoranwodo.gottrivia.utils.SharedPreferenceHelper
 import kotlinx.android.synthetic.main.activity_level.*
 
 class LevelActivity : AppCompatActivity() {
@@ -11,15 +15,36 @@ class LevelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level)
 
-        easy_level.setOnClickListener {
-            val intent = Intent(applicationContext, QuizActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
-        }
+        val pref = SharedPreferenceHelper(this)
+
+        if(pref.hasUnlockedMedium()){ unlockButton(linear_layout_medium, image_view_medium, "Medium") }
+        if(pref.hasUnlockedHard()){ unlockButton(linear_layout_hard, image_view_hard, "Hard") }
+
+        linear_layout_easy.setOnClickListener { loadQuizScreen("Easy") }
 
         btn_close.setOnClickListener {
             finish()
             overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
         }
+    }
+
+    private fun loadQuizScreen(level: String) {
+        val intent = Intent(applicationContext, QuizActivity::class.java)
+        intent.putExtra("LEVEL_EXTRA", level)
+        startActivity(intent)
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
+    }
+
+    private fun unlockButton(layout: LinearLayout, image: ImageView, level: String) {
+        layout.setBackgroundResource(R.drawable.btn_home)
+        image.setImageResource(R.drawable.ic_lock_open_white_24dp)
+        layout.setOnClickListener { loadQuizScreen(level) }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        val pref = SharedPreferenceHelper(this)
+        if(pref.hasUnlockedMedium()){ unlockButton(linear_layout_medium, image_view_medium, "Medium") }
+        if(pref.hasUnlockedHard()){ unlockButton(linear_layout_hard, image_view_hard, "Hard") }
     }
 }

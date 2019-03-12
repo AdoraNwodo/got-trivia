@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.adoranwodo.gottrivia.R
 import com.adoranwodo.gottrivia.model.Score
 
-class ScoresAdapter(private val myDataset: Array<Score>) :
+class ScoresAdapter(private val myDataset: ArrayList<Score>) :
     RecyclerView.Adapter<ScoresAdapter.ScoresViewHolder>() {
 
     class ScoresViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
@@ -28,20 +28,39 @@ class ScoresAdapter(private val myDataset: Array<Score>) :
 
         fun bind(score: Score) {
             val points = score.points
+            val difficulty = score.difficulty
 
-            mDifficultyView?.text = score.difficulty
+            mDifficultyView?.text = difficulty
             mTimeView?.text = score.time
             mScoreView?.text = points.toString()
 
-            when(points){
-                in 70..100 -> mMoodView?.setImageResource(R.drawable.happy)
-                in 50..69 -> mMoodView?.setImageResource(R.drawable.smiling)
-                in 40..59 -> mMoodView?.setImageResource(R.drawable.confused)
-                else -> mMoodView?.setImageResource(R.drawable.crying)
+            if(difficulty == "Easy"){
+                when(points){
+                    in 70..100 -> mMoodView?.setImageResource(R.drawable.happy)
+                    in 50..69 -> mMoodView?.setImageResource(R.drawable.smiling)
+                    in 40..59 -> mMoodView?.setImageResource(R.drawable.confused)
+                    else -> mMoodView?.setImageResource(R.drawable.crying)
+                }
             }
 
-        }
+            if(difficulty == "Medium"){
+                when(points){
+                    in 140..200 -> mMoodView?.setImageResource(R.drawable.happy)
+                    in 100..139 -> mMoodView?.setImageResource(R.drawable.smiling)
+                    in 80..99 -> mMoodView?.setImageResource(R.drawable.confused)
+                    else -> mMoodView?.setImageResource(R.drawable.crying)
+                }
+            }
 
+            if(difficulty == "Hard"){
+                when(points){
+                    in 210..300 -> mMoodView?.setImageResource(R.drawable.happy)
+                    in 150..209 -> mMoodView?.setImageResource(R.drawable.smiling)
+                    in 120..149 -> mMoodView?.setImageResource(R.drawable.confused)
+                    else -> mMoodView?.setImageResource(R.drawable.crying)
+                }
+            }
+        }
     }
 
 
