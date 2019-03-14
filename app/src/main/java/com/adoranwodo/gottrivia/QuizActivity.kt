@@ -2,7 +2,7 @@ package com.adoranwodo.gottrivia
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Button
@@ -40,19 +40,19 @@ class QuizActivity : AppCompatActivity() {
 
         level = bundle.getString("LEVEL_EXTRA")
 
-        questions = QuestionRepository(this).fetch(level) 
+        questions = QuestionRepository(this).fetch(level)
         currentQuestion = questions[questionId]
 
         // set quiz time
         when(level){
             "Easy" -> {
-                text_view_time_left.text = "Time left - 00:05:00"
-                levelTotalTime =  300000
+                text_view_time_left.text = "Time left - 00:04:00"
+                levelTotalTime =  240000 // 300000
                 scoreIncrement = 10
             }
             "Medium" -> {
-                text_view_time_left.text = "Time left - 00:03:00"
-                levelTotalTime = 180000
+                text_view_time_left.text = "Time left - 00:02:00"
+                levelTotalTime = 120000
                 scoreIncrement = 20
             }
             "Hard" -> {
@@ -121,7 +121,7 @@ class QuizActivity : AppCompatActivity() {
     }
 
     @SuppressLint("PrivateResource")
-    private fun toResultsPage(){
+    fun toResultsPage(){
         val intent = Intent(applicationContext, ResultActivity::class.java)
         intent.putExtra("TIME_REMAINING_EXTRA", timeRemaining)
         intent.putExtra("SCORE_EXTRA", score)
@@ -168,6 +168,11 @@ class QuizActivity : AppCompatActivity() {
         }.start()
     }
 
-
+    @SuppressLint("PrivateResource")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
+    }
 }
 

@@ -1,7 +1,8 @@
 package com.adoranwodo.gottrivia
 
+import android.annotation.SuppressLint
 import kotlinx.android.synthetic.main.activity_splash.*
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.content.Intent
@@ -40,6 +41,7 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("PrivateResource")
     private fun goToHome() {
         val intent = Intent(applicationContext, MainActivity::class.java)
         startActivity(intent)

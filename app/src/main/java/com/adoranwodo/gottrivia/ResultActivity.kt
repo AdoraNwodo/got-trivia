@@ -1,14 +1,15 @@
 package com.adoranwodo.gottrivia
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ShareActionProvider
 import com.adoranwodo.gottrivia.database.ScoreRepository
 import com.adoranwodo.gottrivia.model.Score
 import com.adoranwodo.gottrivia.utils.SharedPreferenceHelper
 import kotlinx.android.synthetic.main.activity_result.*
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class ResultActivity : AppCompatActivity() {
 
     private var timeRemaining: Long = 0
@@ -17,6 +18,7 @@ class ResultActivity : AppCompatActivity() {
     private var levelTotalTime: Long = 0
 
 
+    @SuppressLint("SetTextI18n", "PrivateResource")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
@@ -38,7 +40,7 @@ class ResultActivity : AppCompatActivity() {
 
 
         // store game score
-        ScoreRepository(this).create(Score( time = "${timeElapsedInSeconds}s", difficulty = level, points = score ))
+        ScoreRepository(this).create(Score( time = "${timeElapsedInSeconds + 1}s", difficulty = level, points = score ))
 
         text_total_score.text = "Your Score: $score"
         if(score > 140 && ! pref.hasUnlockedHard()){
@@ -52,10 +54,14 @@ class ResultActivity : AppCompatActivity() {
 
         linear_layout_score.setOnClickListener { goToScore() }
         linear_layout_share.setOnClickListener { launchShareIntent() }
-        btn_start_new_game.setOnClickListener { finish() }
+        btn_start_new_game.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
+        }
 
     }
 
+    @SuppressLint("PrivateResource")
     private fun goToScore() {
         val intent = Intent(applicationContext, ScoresActivity::class.java)
         startActivity(intent)
@@ -69,5 +75,12 @@ class ResultActivity : AppCompatActivity() {
         shareIntent.putExtra(Intent.EXTRA_TEXT, "I played Adora's Game of Thrones Trivia quiz and I scored $score. Think you can beat mine, play to find out!")
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "I played Adora's GOT Trivia")
         startActivity(Intent.createChooser(shareIntent, "Share results via"))
+    }
+
+    @SuppressLint("PrivateResource")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
     }
 }

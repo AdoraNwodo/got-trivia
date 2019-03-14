@@ -1,9 +1,9 @@
 package com.adoranwodo.gottrivia
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.adoranwodo.gottrivia.utils.SharedPreferenceHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,22 +19,22 @@ class MainActivity : AppCompatActivity() {
            pref.setFirstInstall()
         }
 
-        btn_play.setOnClickListener {
-            val intent = Intent(applicationContext, LevelActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
-        }
+        btn_play.setOnClickListener { launchIntent(LevelActivity::class.java) }
+        linear_layout_score.setOnClickListener { launchIntent(ScoresActivity::class.java) }
+        linear_layout_rules.setOnClickListener { launchIntent(RulesActivity::class.java) }
+    }
 
-        linear_layout_score.setOnClickListener {
-            val intent = Intent(applicationContext, ScoresActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
-        }
+    @SuppressLint("PrivateResource")
+    private fun launchIntent(activity: Class<*>){
+        val intent = Intent(applicationContext, activity)
+        startActivity(intent)
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
+    }
 
-        linear_layout_rules.setOnClickListener {
-            val intent = Intent(applicationContext, RulesActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
-        }
+    @SuppressLint("PrivateResource")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
     }
 }

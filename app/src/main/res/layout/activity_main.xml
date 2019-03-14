@@ -10,7 +10,7 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/background" android:scaleType="centerCrop" />
+            android:src="@drawable/map" android:scaleType="centerCrop" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

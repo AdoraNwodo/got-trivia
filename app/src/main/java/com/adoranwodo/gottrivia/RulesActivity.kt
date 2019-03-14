@@ -1,11 +1,13 @@
 package com.adoranwodo.gottrivia
 
-import android.support.v7.app.AppCompatActivity
+import android.annotation.SuppressLint
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_scores.*
 
 class RulesActivity : AppCompatActivity() {
 
+    @SuppressLint("PrivateResource")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rules)
@@ -14,5 +16,12 @@ class RulesActivity : AppCompatActivity() {
             finish()
             overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
         }
+    }
+
+    @SuppressLint("PrivateResource")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
     }
 }

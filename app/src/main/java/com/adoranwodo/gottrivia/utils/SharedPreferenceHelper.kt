@@ -101,13 +101,6 @@ class SharedPreferenceHelper(val context: Context) {
     }
 
     /**
-     * Retrieves an item with a specific key from Shared Preference file
-     */
-    fun retrieve(KEY_NAME: String): Boolean {
-        return sharedPref.getBoolean(KEY_NAME, false)
-    }
-
-    /**
      * Removes all items from Shared Preference file
      */
     fun clearAll() {

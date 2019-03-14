@@ -1,19 +1,19 @@
 package com.adoranwodo.gottrivia
 
-import android.support.v7.app.AppCompatActivity
+import android.annotation.SuppressLint
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.adoranwodo.gottrivia.adapter.ScoresAdapter
 import com.adoranwodo.gottrivia.database.ScoreRepository
-import com.adoranwodo.gottrivia.model.Score
 import kotlinx.android.synthetic.main.activity_scores.*
 
 class ScoresActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var viewAdapter: RecyclerView.Adapter<*>
-    private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var recyclerView: androidx.recyclerview.widget.RecyclerView
+    private lateinit var viewAdapter: androidx.recyclerview.widget.RecyclerView.Adapter<*>
+    private lateinit var viewManager: androidx.recyclerview.widget.RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,7 @@ class ScoresActivity : AppCompatActivity() {
 
         val scores = ScoreRepository(this).fetch()
 
-        viewManager = LinearLayoutManager(this)
+        viewManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         viewAdapter = ScoresAdapter(scores)
 
         recyclerView = my_recycler_view.apply {
@@ -35,5 +35,12 @@ class ScoresActivity : AppCompatActivity() {
             finish()
             overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
         }
+    }
+
+    @SuppressLint("PrivateResource")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
     }
 }
