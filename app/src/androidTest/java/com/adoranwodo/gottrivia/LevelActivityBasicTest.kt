@@ -29,6 +29,9 @@ class LevelActivityBasicTest {
     @get:Rule
     var mActivityTestRule = ActivityTestRule<LevelActivity>(LevelActivity::class.java)
 
+    /**
+     * Unlock medium and hard levels before running any test in this class
+     * */
     @Before
     fun before(){
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
