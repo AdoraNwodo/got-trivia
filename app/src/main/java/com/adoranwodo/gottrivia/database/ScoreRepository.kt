@@ -7,9 +7,14 @@ import org.jetbrains.anko.db.MapRowParser
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
 
+/**
+ * Class to fetch and manipulate score data
+ * */
 class ScoreRepository(val context: Context){
 
-
+    /**
+     * Adds a new score to the database
+     * */
     fun create(score: Score) = context.database.use {
         insert(
             SCORE_TABLE_NAME,
@@ -18,6 +23,9 @@ class ScoreRepository(val context: Context){
             "points" to score.points )
     }
 
+    /**
+     * Fetches all scores in database
+     * */
     fun fetch(): ArrayList<Score> = context.database.use {
         var scores = ArrayList<Score>()
 

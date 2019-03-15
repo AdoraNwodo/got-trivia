@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.widget.ProgressBar
 import android.content.Intent
 
+/**
+ * Splash Activity. View for progress bar splash screen
+ * */
 class SplashActivity : AppCompatActivity() {
     private var interval: Long = 100
     private var count: Int = 5

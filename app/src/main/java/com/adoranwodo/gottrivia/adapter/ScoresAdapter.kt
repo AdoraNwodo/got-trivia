@@ -1,6 +1,5 @@
 package com.adoranwodo.gottrivia.adapter
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -8,9 +7,15 @@ import android.widget.TextView
 import com.adoranwodo.gottrivia.R
 import com.adoranwodo.gottrivia.model.Score
 
+/**
+ * Adapter for Score Recylerview
+ */
 class ScoresAdapter(private val myDataset: ArrayList<Score>) :
     androidx.recyclerview.widget.RecyclerView.Adapter<ScoresAdapter.ScoresViewHolder>() {
 
+    /**
+     * View holder for score layout
+     * */
     class ScoresViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         androidx.recyclerview.widget.RecyclerView.ViewHolder(inflater.inflate(R.layout.layout_score, parent, false)) {
         private var mDifficultyView: TextView? = null

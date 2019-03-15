@@ -9,6 +9,9 @@ import com.adoranwodo.gottrivia.model.Score
 import com.adoranwodo.gottrivia.utils.SharedPreferenceHelper
 import kotlinx.android.synthetic.main.activity_result.*
 
+/**
+ * Result Activity. View for a game session's result
+ * */
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class ResultActivity : AppCompatActivity() {
 

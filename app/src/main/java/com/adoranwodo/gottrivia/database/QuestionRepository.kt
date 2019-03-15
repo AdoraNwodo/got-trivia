@@ -6,7 +6,15 @@ import com.adoranwodo.gottrivia.model.Question
 import org.jetbrains.anko.db.MapRowParser
 import org.jetbrains.anko.db.*
 
+/**
+ * Class to fetch and manipulate question data
+ * */
 class QuestionRepository(val context: Context){
+
+    /**
+     * Randomly fetch 10 questions from a particular level
+     * @param level difficulty level to fetch
+     * */
     fun fetch(level: String?): ArrayList<Question> = context.database.use {
         var questions = ArrayList<Question>()
 

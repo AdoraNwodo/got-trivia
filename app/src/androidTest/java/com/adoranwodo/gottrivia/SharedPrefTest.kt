@@ -19,13 +19,18 @@ import com.adoranwodo.gottrivia.utils.SharedPreferenceHelper
 @RunWith(AndroidJUnit4::class)
 class SharedPrefTest {
 
+    /**
+     * Checks the context of the app under test
+     * */
     @Test
     fun useAppContext() {
-        // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.adoranwodo.gottrivia", appContext.packageName)
     }
 
+    /**
+     * Attempts to clear shared prefs and checks that app appears to be installed for the first time
+     * */
     @Test
     @Throws(Exception::class)
     fun checkFirstInstallation() {
@@ -35,6 +40,9 @@ class SharedPrefTest {
         assertTrue(pref.isFirstInstallation())
     }
 
+    /**
+     * Checks that after setting that app has been installed in preferences, the medium and hard levels are locked
+     * */
     @Test
     @Throws(Exception::class)
     fun checkFirstInstallationSet() {
@@ -46,6 +54,9 @@ class SharedPrefTest {
         assertFalse(pref.hasUnlockedHard())
     }
 
+    /**
+     * Attempts to unlock the medium level and makes sure it actually unlocks
+     * */
     @Test
     @Throws(Exception::class)
     fun checkUnlockMedium() {
@@ -55,6 +66,9 @@ class SharedPrefTest {
         assertTrue(pref.hasUnlockedMedium())
     }
 
+    /**
+     * Attempts to unlock the hard level and makes sure it actually unlocks
+     * */
     @Test
     @Throws(Exception::class)
     fun checkUnlockHard() {

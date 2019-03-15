@@ -4,6 +4,9 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import org.jetbrains.anko.db.*
 
+/**
+ * Helper methods for quiz database
+ * */
 class QuizDatabaseOpenHelper(context: Context) : ManagedSQLiteOpenHelper(context, DATABASE_NAME, null, 1)  {
 
     companion object {
@@ -11,6 +14,9 @@ class QuizDatabaseOpenHelper(context: Context) : ManagedSQLiteOpenHelper(context
 
         private var instance: QuizDatabaseOpenHelper? = null
 
+        /**
+         * Singletom getInstance method.
+         * */
         @Synchronized
         fun getInstance(context: Context): QuizDatabaseOpenHelper {
 

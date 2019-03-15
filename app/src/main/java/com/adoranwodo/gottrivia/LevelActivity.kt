@@ -9,6 +9,9 @@ import android.widget.LinearLayout
 import com.adoranwodo.gottrivia.utils.SharedPreferenceHelper
 import kotlinx.android.synthetic.main.activity_level.*
 
+/**
+ * Level Activity. View for the three game levels
+ * */
 class LevelActivity : AppCompatActivity() {
 
     @SuppressLint("PrivateResource")

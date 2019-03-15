@@ -1,5 +1,8 @@
 package com.adoranwodo.gottrivia.model
 
+/**
+ * Fields for a question
+ * */
 data class Question(
     val id: Long = 0,
     val question: String,

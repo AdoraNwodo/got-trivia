@@ -7,6 +7,9 @@ import android.os.Bundle
 import com.adoranwodo.gottrivia.utils.SharedPreferenceHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Main Activity. View for the game home screen
+ * */
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

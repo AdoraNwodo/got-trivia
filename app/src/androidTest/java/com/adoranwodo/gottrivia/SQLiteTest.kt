@@ -21,6 +21,10 @@ import org.junit.Assert.*
 @RunWith(AndroidJUnit4::class)
 class SQLiteTest {
 
+    /**
+     * Attempts to fetch questions for a quiz.
+     * The result should have 10 results
+     * */
     @Test
     @Throws(Exception::class)
     fun checkThatSQLiteReturnsTenQuestions() {
@@ -29,6 +33,9 @@ class SQLiteTest {
         assertEquals(questions.size, 10)
     }
 
+    /**
+     * Attempts to save score and ensures that action returns long id
+     * */
     @Test
     @Throws(Exception::class)
     fun checkThatScoresAreSaved() {
@@ -37,6 +44,11 @@ class SQLiteTest {
         assertTrue(score > 0)   // insertion should return positive long id
     }
 
+    /**
+     * Checks that scored can be retrieved.
+     * Attempts to save a score and then attempts to fetch all scores.
+     * When scores are fetched, there should be at least one score in db
+     * */
     @Test
     @Throws(Exception::class)
     fun checkThatScoresCanBeRetrieved() {
