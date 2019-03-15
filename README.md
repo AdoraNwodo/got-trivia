@@ -9,6 +9,8 @@
 
 Game of Thrones Trivia is an open source Android quiz game (just for fun). In anticipation of the final season, I have created a quiz app for people to play and just have fun.
 
+<img src="https://github.com/NenneAdora/MedManager/blob/master/screens.png" height="400"/>
+
 
 ## Features
 **Multiple levels** - The `Easy` level is unlocked by default and users have to get a certain amount of points to unlock the `Medium` or `Hard` level.
