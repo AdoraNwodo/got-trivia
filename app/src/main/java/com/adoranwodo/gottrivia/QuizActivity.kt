@@ -28,6 +28,7 @@ class QuizActivity : AppCompatActivity() {
     private var questionId = 0
     private var currentQuestion: Question? = null
     private var level: String? = "Easy"
+    private var isCancelled = false
 
     @SuppressLint("PrivateResource, SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,15 +68,16 @@ class QuizActivity : AppCompatActivity() {
         setQuestionView()
 
         btn_close.setOnClickListener {
+            isCancelled = true
             finish()
             overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
         }
 
         setTimer(levelTotalTime)
 
-        button_option_a.setOnClickListener { answerEvaluator(button_option_a) }
-        button_option_b.setOnClickListener { answerEvaluator(button_option_b) }
-        button_option_c.setOnClickListener { answerEvaluator(button_option_c) }
+        button_option_a.setOnClickListener { answerEvaluator(button_option_a, "a") }
+        button_option_b.setOnClickListener { answerEvaluator(button_option_b, "b") }
+        button_option_c.setOnClickListener { answerEvaluator(button_option_c, "c") }
     }
 
     @SuppressLint("SetTextI18n")
@@ -89,10 +91,10 @@ class QuizActivity : AppCompatActivity() {
         questionId++
     }
 
-    private fun answerEvaluator(button: Button) {
-        val answer = checkAnswer(button.text.toString())
+    private fun answerEvaluator(button: Button, answer: String) {
+        val isAnswer = checkAnswer(answer)
 
-        if(answer) button.setBackgroundResource(R.drawable.btn_correct)
+        if(isAnswer) button.setBackgroundResource(R.drawable.btn_correct)
             else button.setBackgroundResource(R.drawable.btn_wrong)
 
         val handler = Handler()
@@ -118,6 +120,7 @@ class QuizActivity : AppCompatActivity() {
             currentQuestion = questions[questionId]
             setQuestionView()
         }else{
+            isCancelled = true
             toResultsPage()
         }
     }
@@ -143,6 +146,8 @@ class QuizActivity : AppCompatActivity() {
 
         object : CountDownTimer(millisInFuture, countDownInterval) {
             override fun onTick(millisUntilFinished: Long) {
+
+                if (isCancelled){ cancel() }
 
                 //Display the remaining seconds to the app interface
                 //1 second = 1000 milliseconds
@@ -170,12 +175,14 @@ class QuizActivity : AppCompatActivity() {
             override fun onFinish() {
                 toResultsPage()
             }
+
         }.start()
     }
 
     @SuppressLint("PrivateResource")
     override fun onBackPressed() {
         super.onBackPressed()
+        isCancelled = true
         finish()
         overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out)
     }

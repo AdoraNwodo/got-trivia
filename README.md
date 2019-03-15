@@ -15,7 +15,9 @@ Game of Thrones Trivia is an open source Android quiz game (just for fun). In an
 ## Features
 **Multiple levels** - The `Easy` level is unlocked by default and users have to get a certain amount of points to unlock the `Medium` or `Hard` level.
 
-**Countdown timer** - Each level has a countdown. 10 seconds to the end of the coutdown, a warning is shown to the user. Once the time as elapsed, the game ends immediately
+**Countdown timer** - Each level has a countdown. 10 seconds to the end of the countdown, a warning is shown to the user. Once the time as elapsed, the game ends immediately
+
+**Share** - Share your scores on multiple platforms
 
 
 ## Configuration

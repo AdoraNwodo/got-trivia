@@ -49,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorDarkBlue"
                     android:text="The game"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:fontFamily="@font/quicksand_bold"
                     android:gravity="center"
             />
@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:text="@string/text_got_description"
-                    android:textSize="20sp"
+                    android:textSize="14sp"
                     android:fontFamily="@font/quicksand"
                     android:gravity="center"
                     android:layout_marginTop="10dp"

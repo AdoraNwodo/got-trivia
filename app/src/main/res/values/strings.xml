@@ -11,8 +11,11 @@
     <string name="text_default_total_score">Your Score: 50</string>
     <string name="text_start_new_game">Start New Game</string>
     <string name="text_got_description">Game of Thrones Trivia is a trivia game based on the Game of Thrones series.
-        Just for fun, while we wait for the final season. Players have a short amount of time to answer questions
-        correctly. As you build points, you would be able to unlock other quiz levels. Have fun!
+        \nJust for fun, while we wait for the final season.
+        \n\nPlayers have a short amount of time to answer questions correctly. As you build points, you would be able to unlock other quiz levels.
+        \n\nTo unlock the middle level, you need to have 90 points.
+        \n\nTo unlock the hard level, you need to have 180 points.
+        \n\nHave fun!
     </string>
     <string name="text_you_unlocked_medium">Congratulations! You have unlocked the medium challenge</string>
     <string name="text_you_unlocked_hard">Congratulations! You have unlocked the hard challenge</string>

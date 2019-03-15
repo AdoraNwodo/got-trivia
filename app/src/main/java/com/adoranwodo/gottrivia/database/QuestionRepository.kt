@@ -20,7 +20,6 @@ class QuestionRepository(val context: Context){
 
         select(QUESTION_TABLE_NAME, "id", "question", "difficulty", "optionA", "optionB", "optionC", "answer")
             .whereArgs("difficulty = '$level'")
-            .limit(10)
             .parseList(object: MapRowParser<List<Question>>{
                 override fun parseRow(columns: Map<String, Any?>): List<Question>{
                     val id = columns.getValue("id")

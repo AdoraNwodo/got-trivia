@@ -46,10 +46,10 @@ class ResultActivity : AppCompatActivity() {
         ScoreRepository(this).create(Score( time = "${timeElapsedInSeconds + 1}s", difficulty = level, points = score ))
 
         text_total_score.text = "Your Score: $score"
-        if(score > 140 && ! pref.hasUnlockedHard()){
+        if(score >= 180 && ! pref.hasUnlockedHard()){
             text_game_over.text = getString(R.string.text_you_unlocked_hard)
             pref.unlockHard()
-        }else if(score > 70 && ! pref.hasUnlockedMedium()){
+        }else if(score >= 90 && ! pref.hasUnlockedMedium()){
             text_game_over.text = getString(R.string.text_you_unlocked_medium)
             pref.unlockMedium()
         }
