@@ -32,14 +32,8 @@ class SplashActivity : AppCompatActivity() {
     private fun showProgressBar() {
         var progress = 0
         while (progress < 105) {
-            try {
-                //increment progress bar every 100ms
-                Thread.sleep(interval)
-                mProgress?.progress = progress
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-
+            Thread.sleep(interval)
+            mProgress?.progress = progress
             progress += count
         }
     }
