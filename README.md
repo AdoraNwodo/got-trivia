@@ -7,7 +7,7 @@
 [![Release](https://img.shields.io/github/release/AdoraNwodo/got-trivia.svg)](https://github.com/AdoraNwodo/got-trivia/releases)
 
 <br />
-<a href="#" target="_blank">
+<a href="https://play.google.com/store/apps/details?id=com.adoranwodo.gottrivia" target="_blank">
   <img src="https://github.com/AdoraNwodo/got-trivia/blob/master/play.png" width="200" />
 </a>
 <br /><br />
