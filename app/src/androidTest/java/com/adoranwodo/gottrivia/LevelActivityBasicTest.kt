@@ -40,6 +40,9 @@ class LevelActivityBasicTest {
         pref.unlockHard()
     }
 
+    /**
+     * Checks if the quiz intent is launched when the easy button is clicked
+     * */
     @Test
     @Throws(Exception::class)
     fun clickEasyButton_LaunchesQuizIntent() {
@@ -54,6 +57,9 @@ class LevelActivityBasicTest {
         Intents.release()
     }
 
+    /**
+     * Checks if the quiz intent is launched when the medium button is clicked
+     * */
     @Test
     @Throws(Exception::class)
     fun clickMediumButton_LaunchesQuizIntent() {
@@ -63,6 +69,9 @@ class LevelActivityBasicTest {
         Intents.release()
     }
 
+    /**
+     * Checks if the quiz intent is launched when the hard button is clicked
+     * */
     @Test
     @Throws(Exception::class)
     fun clickHardButton_LaunchesQuizIntent() {

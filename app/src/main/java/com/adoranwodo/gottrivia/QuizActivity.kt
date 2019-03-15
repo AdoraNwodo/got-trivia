@@ -13,7 +13,9 @@ import android.os.CountDownTimer
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-
+/**
+ * Quiz logic
+ * */
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class QuizActivity : AppCompatActivity() {
 
@@ -76,6 +78,9 @@ class QuizActivity : AppCompatActivity() {
         button_option_c.setOnClickListener { answerEvaluator(button_option_c) }
     }
 
+    /**
+     * Shows the next question on the question card
+     * */
     @SuppressLint("SetTextI18n")
     private fun setQuestionView(){
         text_view_questions_answered.text = "${questionId + 1} / ${questions.size}"
@@ -87,6 +92,10 @@ class QuizActivity : AppCompatActivity() {
         questionId++
     }
 
+    /**
+     * Shows the appropriate button when a question is answered.
+     * If an answer is correct, the score is also increased
+     * */
     private fun answerEvaluator(button: Button) {
         val answer = checkAnswer(button.text.toString())
 
@@ -101,6 +110,11 @@ class QuizActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * Checks if an answer is correct or wrong
+     * @param answer
+     * @return true or false
+     * */
     @SuppressLint("SetTextI18n")
     private fun checkAnswer(answer: String): Boolean {
         if(currentQuestion?.answer.equals(answer)){
@@ -111,6 +125,9 @@ class QuizActivity : AppCompatActivity() {
         return false
     }
 
+    /**
+     * Launches the next question
+     * */
     private fun goToNextQuestion() {
         if(questionId < questions.size){
             currentQuestion = questions[questionId]
@@ -120,6 +137,9 @@ class QuizActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Launches the results screen with results of this quiz session
+     * */
     @SuppressLint("PrivateResource")
     fun toResultsPage(){
         val intent = Intent(applicationContext, ResultActivity::class.java)
@@ -132,6 +152,9 @@ class QuizActivity : AppCompatActivity() {
         finish()
     }
 
+    /**
+     * Starts a countdown timer for the quiz
+     * */
     @SuppressLint("SetTextI18n")
     private fun setTimer(time: Long){
         val millisInFuture: Long = time

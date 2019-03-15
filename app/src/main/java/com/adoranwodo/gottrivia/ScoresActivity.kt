@@ -9,6 +9,9 @@ import com.adoranwodo.gottrivia.adapter.ScoresAdapter
 import com.adoranwodo.gottrivia.database.ScoreRepository
 import kotlinx.android.synthetic.main.activity_scores.*
 
+/**
+ * View to show a list of scores
+ * */
 class ScoresActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: androidx.recyclerview.widget.RecyclerView

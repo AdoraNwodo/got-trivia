@@ -31,6 +31,9 @@ class ScoresAdapter(private val myDataset: ArrayList<Score>) :
             mMoodView = itemView.findViewById(R.id.image_view_mood)
         }
 
+        /**
+         * Binds score data to the view
+         * */
         fun bind(score: Score) {
             val points = score.points
             val difficulty = score.difficulty

@@ -3,6 +3,9 @@ package com.adoranwodo.gottrivia.utils
 import android.content.Context
 import android.content.SharedPreferences
 
+/**
+ * Helpers to fetch and edit sharedp preferences
+ * */
 class SharedPreferenceHelper(val context: Context) {
 
     private val sharedPref: SharedPreferences = context.getSharedPreferences(SharedPreferenceContract.PREF_NAME, Context.MODE_PRIVATE)
@@ -33,14 +36,6 @@ class SharedPreferenceHelper(val context: Context) {
     }
 
     /**
-     * Get the current highest score of the user
-     * @return
-     */
-    fun getHighestScore(): Int {
-        return sharedPref.getInt(SharedPreferenceContract.PREF_HIGHEST_SCORE, 0)
-    }
-
-    /**
      * Sets the value of installed to true and unlocks ONLY the easy level.
      */
     fun setFirstInstall() {
@@ -53,14 +48,6 @@ class SharedPreferenceHelper(val context: Context) {
         editor.putInt(SharedPreferenceContract.PREF_HIGHEST_SCORE, 0)
 
         editor.apply()
-    }
-
-    /**
-     * Checks if a key exists in shared preferences
-     * @return
-     */
-    fun isContainedInSharedPreference(key: String): Boolean {
-        return sharedPref.contains(key)
     }
 
     /**
@@ -82,25 +69,6 @@ class SharedPreferenceHelper(val context: Context) {
     }
 
     /**
-     * Sets the highest score
-     */
-    fun setHighestScore(score: Int) {
-        val editor: SharedPreferences.Editor = sharedPref.edit()
-        editor.putInt(SharedPreferenceContract.PREF_HIGHEST_SCORE, score)
-        editor.apply()
-    }
-
-
-    /**
-     * Saves an item with a specific key-value pair to Shared Preference file
-     */
-    fun save(KEY_NAME: String, status: Boolean) {
-        val editor: SharedPreferences.Editor = sharedPref.edit()
-        editor.putBoolean(KEY_NAME, status)
-        editor.apply()
-    }
-
-    /**
      * Removes all items from Shared Preference file
      */
     fun clearAll() {
@@ -108,15 +76,4 @@ class SharedPreferenceHelper(val context: Context) {
         editor.clear()
         editor.apply()
     }
-
-    /**
-     * Removes an item with a specific key from Shared Preference file
-     */
-    fun remove(KEY_NAME: String) {
-        val editor: SharedPreferences.Editor = sharedPref.edit()
-        editor.remove(KEY_NAME)
-        editor.apply()
-    }
-
-
 }

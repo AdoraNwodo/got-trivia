@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_scores.*
 
+/**
+ * View to show the game rules
+ * */
 class RulesActivity : AppCompatActivity() {
 
     @SuppressLint("PrivateResource")

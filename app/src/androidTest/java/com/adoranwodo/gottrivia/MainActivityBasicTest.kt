@@ -26,6 +26,9 @@ class MainActivityBasicTest {
     @get:Rule
     var mActivityTestRule = ActivityTestRule<MainActivity>(MainActivity::class.java)
 
+    /**
+     * Checks if the level intent is launched when the play button is clicked
+     * */
     @Test
     @Throws(Exception::class)
     fun clickPlayButton_LaunchesLevelIntent() {
@@ -40,6 +43,9 @@ class MainActivityBasicTest {
         Intents.release()
     }
 
+    /**
+     * Checks if the score intent is launched when the score button is clicked
+     * */
     @Test
     @Throws(Exception::class)
     fun clickScoreButton_LaunchesScoreIntent() {
@@ -54,6 +60,9 @@ class MainActivityBasicTest {
         Intents.release()
     }
 
+    /**
+     * Checks if the rules intent is launched when the rules button is clicked
+     * */
     @Test
     @Throws(Exception::class)
     fun clickRulesButton_LaunchesRulesIntent() {

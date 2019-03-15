@@ -1,6 +1,9 @@
 package com.adoranwodo.gottrivia.utils
 
-class SharedPreferenceContract(){
+/**
+ * Shared pref names
+ * */
+class SharedPreferenceContract {
     companion object {
         const val PREF_NAME = "PREF_GOT_TRIVIA_ADORA"
 
