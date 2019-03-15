@@ -6,6 +6,11 @@
 [![MIT license](https://img.shields.io/github/license/AdoraNwodo/got-trivia.svg)](https://github.com/AdoraNwodo/got-trivia/blob/master/LICENSE)
 [![Release](https://img.shields.io/github/release/AdoraNwodo/got-trivia.svg)](https://github.com/AdoraNwodo/got-trivia/releases)
 
+<br />
+<a href="#" target="_blank">
+  <img src="https://github.com/AdoraNwodo/got-trivia/blob/master/play.png" width="200" />
+</a>
+<br /><br />
 
 Game of Thrones Trivia is an open source Android quiz game (just for fun). In anticipation of the final season, I have created a quiz app for people to play and just have fun.
 
