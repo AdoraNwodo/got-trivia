@@ -37,7 +37,7 @@ This means you would need to have Android Studio 3.2.1 or later and AndroidX ins
 1. Clone this project `git clone git@github.com:AdoraNwodo/got-trivia.git`
 2. Launch and build project on Android studio.
 
-To test this application, please use an Android device or emulator. 
+To test this application, please use an Android device or emulator (OS 4.4 or newer). 
 
 
 
