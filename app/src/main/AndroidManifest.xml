@@ -20,7 +20,8 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuizActivity">
+        <activity android:name=".QuizActivity"
+        android:screenOrientation="portrait">
         </activity>
         <activity android:name=".ResultActivity">
         </activity>
