@@ -9,27 +9,50 @@
             android:roundIcon="@drawable/swords"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+        >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action
+                    android:name="android.intent.action.MAIN"/>
+                <category
+                    android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+        >
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <action
+                    android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuizActivity"
-        android:screenOrientation="portrait">
+        <activity
+            android:name=".QuizActivity"
+            android:screenOrientation="portrait"
+        >
         </activity>
-        <activity android:name=".ResultActivity">
+        <activity
+            android:name=".ResultActivity"
+            android:screenOrientation="portrait"
+        >
         </activity>
-        <activity android:name=".LevelActivity">
+        <activity
+            android:name=".LevelActivity"
+            android:screenOrientation="portrait"
+        >
         </activity>
-        <activity android:name=".ScoresActivity">
+        <activity
+            android:name=".ScoresActivity"
+            android:screenOrientation="portrait"
+        >
         </activity>
-        <activity android:name=".RulesActivity">
+        <activity
+            android:name=".RulesActivity"
+            android:screenOrientation="portrait"
+        >
         </activity>
     </application>
 
