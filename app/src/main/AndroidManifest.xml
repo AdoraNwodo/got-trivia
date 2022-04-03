@@ -11,7 +11,7 @@
             android:theme="@style/AppTheme">
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
         >
             <intent-filter>
                 <action
@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
         >
             <intent-filter>
                 <action
@@ -31,27 +31,27 @@
         </activity>
         <activity
             android:name=".QuizActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
         >
         </activity>
         <activity
             android:name=".ResultActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
         >
         </activity>
         <activity
             android:name=".LevelActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
         >
         </activity>
         <activity
             android:name=".ScoresActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
         >
         </activity>
         <activity
             android:name=".RulesActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
         >
         </activity>
     </application>
